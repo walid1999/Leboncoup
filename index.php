@@ -66,6 +66,12 @@
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
           <h3> mettre formulaire de recherche</h3>
+
+          <label for="site-search">Rechercher Annonce :</label>
+          <input type="search" id="site-search" name="q"
+          aria-label="Search through site content">
+
+<button>Search</button>
     </section>
 
     
