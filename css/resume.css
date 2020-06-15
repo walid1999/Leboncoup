@@ -174,3 +174,24 @@ a {
 a:hover, a:focus, a:active {
   color: blue;
 }
+
+.inscription{
+  margin-left: 37%;
+}
+.form-group{
+  width: 40%;
+}
+.box-title{
+  text-align: center;
+}
+
+.login{
+  margin-left: 40%;
+  margin-top: 10%;
+}
+
+.leboncoup{
+  margin: auto  ;
+  margin-top: 0%;
+}
+

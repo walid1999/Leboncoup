@@ -43,16 +43,25 @@
         <input type="search" id="site-search" name="q" aria-label="Search through site content" placeholder="Rechercher Annonce">
         <i class="icon-search" type="submit"></i> 
         </div>
-        
-        </li>
+
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="annonces.php">Annonces</a>
         </li>
-       
+        
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="mesannonces.php">Mes annonces</a>
+        </li>
 
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="login.php">Connexion/Inscription</a>
+          <a class="nav-link js-scroll-trigger" href="ajoutannonces.php">Ajouter une annonce</a>
         </li>
+       
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="profil.php">Profil</a>
+        </li>
+
+        
        
       </ul>
     </div>
