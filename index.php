@@ -1,4 +1,4 @@
-
+<?php include("inc/header.inc.php"); ?>
 
 <?php
 session_start();
@@ -9,45 +9,43 @@ session_start();
    include("inc/header.inc.php");
  }
 
+ $annonce = $pdo->query('SELECT * FROM annonces ORDER BY id_annonces DESC');
+if(isset($_POST['q']) AND !empty($_POST['q'])) {
+   $q = htmlspecialchars($_POST['q']);
+   $annonce = $pdo->query('SELECT * FROM annonces WHERE titre LIKE "%'.$q.'%" ORDER BY id_annonces DESC');
+   if($annonce->rowCount() == 0) {
+      $annonce = $pdo->query('SELECT * FROM annonces WHERE CONCAT(titre, prix) LIKE "%'.$q.'%" ORDER BY id_annonces DESC');
+   }
+}
+?>
+<div align="center">
+<h1 >Leboncoup</h1>
+
+<form method="post">
+   <input type="search" name="q" placeholder="Recherche..." />
+   <input type="submit" name="search" value="Valider" />
+</form>
+</div>
+<?php
+  if (isset($_POST['search'])){
+    if($annonce->rowCount() > 0) { ?>
+   
+   <?php while($a = $annonce->fetch()) { ?>
+    <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+          <img class="img" src="<?php echo $a['img_annonce'];?>" >
+          <p><?php echo $a['titre'];?>  <br>  <?php echo $a['prix']; ?>€</p>
+          <a href="annonce.php?id=<?php echo $a['id_annonces']; ?>" class="btn btn-primary">Voir détail</a>
+          
+        </div>  
+   <?php } ?>
+   
+<?php } else { ?>
+Aucun résultat pour: <?php $q ?>...
+<?php } 
+  }
 ?>
 
-  <div class="container-fluid p-0">
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
-      <div class="leboncoup">
-        <h1 href="titre" class="mb-0">LeBonCoup</h1>
-      </div>
-    </section>
-
-    <hr class="m-0">
-
-    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="annonce">
-      <div class="w-100">
-        <h2 class="mb-5">Annonce</h2>
-
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-          <img class="img" src="img/voiture.jpg" href="voiture">
-          <p>voiture</p>
-          <img class="img" src="img/maison.jpg" href="maison">
-          <p>maison</p>
-          <img class="img" src="img/chien.jpg" href="chien ">
-          <p>chien</p>
-       
-    </section>
 
     
-
-  <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
-  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
-  <!-- Custom scripts for this template -->
-  <script src="js/resume.min.js"></script>
-
-</body>
-
-</html>

@@ -25,7 +25,7 @@ session_start();
           <p><?php echo $userinfo['titre']?>  <br>  <?php echo $userinfo['prix']; ?>€</p>
           <a href="annonce.php?id=<?php echo $userinfo['id_annonces']; ?>" class="btn btn-primary">Voir détail</a>
           
-          
+        </div>  
          
        
   

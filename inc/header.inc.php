@@ -39,12 +39,9 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item">
-        <div>
-        <input type="search" id="site-search" name="q" aria-label="Search through site content" placeholder="Rechercher Annonce">
-        <i class="icon-search" type="submit"></i> 
-        </div>
-        
+          <a class="nav-link js-scroll-trigger" href="index.php">Accueil</a>
         </li>
+        
         <li class="nav-item">
           <a class="nav-link js-scroll-trigger" href="annonces.php">Annonces</a>
         </li>
