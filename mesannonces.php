@@ -26,7 +26,7 @@ if(isset($_SESSION["id"])){ ?>
           <p><?php echo $userinfo['titre']?>  <br>  <?php echo $userinfo['prix']; ?>€</p>
           <a href="modification.php?id=<?php echo $userinfo['id_annonces']; ?>" class="btn btn-primary">Modifier ou Supprimer </a>
           <a href="annonce.php?id=<?php echo $userinfo['id_annonces']; ?>" class="btn btn-primary">Voir détail</a>
-        </div>
+          </div>
 
          
        
