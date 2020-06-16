@@ -19,12 +19,12 @@ session_start();
         $requeteSQL->execute();
         while ($userinfo = $requeteSQL->fetch()) { ?>
 
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-item  m-5 row justify-content-center">
           <div class="resume-content">
-          <img class="img" src="<?php echo $userinfo['img_annonce'];?>" >
-          <p><?php echo $userinfo['titre']?>  <br>  <?php echo $userinfo['prix']; ?>€</p>
-          <a href="annonce.php?id=<?php echo $userinfo['id_annonces']; ?>" class="btn btn-primary">Voir détail</a>
-          
+            <img class="img" src="<?php echo $userinfo['img_annonce'];?>" >
+            <p><?php echo $userinfo['titre']?>  <br>  <?php echo $userinfo['prix']; ?>€</p>
+            <a href="annonce.php?id=<?php echo $userinfo['id_annonces']; ?>" class="btn btn-primary">Voir détail</a>
+          </div>
         </div>  
          
        
