@@ -18,17 +18,25 @@ session_start();
                 // Selection
                 $requeteSQL = $pdo->prepare("SELECT * FROM annonces WHERE id_annonces = $_GET[id]");
                 $requeteSQL->execute();     
-                $userinfo = $requeteSQL->fetch()
+                $annonce = $requeteSQL->fetch();
+
+                $_SESSION['idprofil'] = $annonce['id_profil'];
+
+                $reqSQL = $pdo->prepare("SELECT * FROM profil WHERE id_profil = $_SESSION[idprofil]");
+                $reqSQL->execute();     
+                $userinfo = $reqSQL->fetch();
                
                 //******************************************* */
                 ?>   
 
                 <div class="card">
-                        <img src="<?php echo $userinfo['img_annonce']; ?>" class="card-img-top" alt="...">
+                        <img src="<?php echo $annonce['img_annonce']; ?>" class="card-img-top" alt="...">
                         <div class="card-body">
-                                <h5 class="card-title"><?php echo $userinfo['titre']; ?></h5>
-                                <h4 class="card-title"><?php echo $userinfo['prix']; ?> € </h4>
-                                <p><?php echo $userinfo['description']; ?></p> 
+                                <h5 class="card-title"><?php echo $annonce['titre']; ?></h5>
+                                <h4 class="card-title"><?php echo $annonce['prix']; ?> € </h4>
+                                <h4 class="card-title">Vendeur: <?php echo $userinfo['identifiant']; ?></h4>
+
+                                <p><?php echo $annonce['description']; ?></p> 
                         </div>
                 </div> 
 
