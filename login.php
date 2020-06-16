@@ -13,8 +13,7 @@ if (isset($_POST['connexion'])){
     if($userexist == 1 ){
         $userinfo = $requeteSQL->fetch();
         $_SESSION['id'] = $userinfo['id_profil'];
-        $_SESSION['nom_utilisateur'] = $userinfo->identifiant;
-        $_SESSION['mot_de_passe'] = $userinfo->mot_de_passe;
+        
         header("Location: profil.php?id=".$_SESSION['id']);
     }
     else {

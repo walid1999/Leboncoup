@@ -14,8 +14,7 @@ session_start();
         <?php if (!empty($_GET)) { ?>
 
                 <?php
-                //******************************************* */
-                // Selection
+              
                 $requeteSQL = $pdo->prepare("SELECT * FROM annonces WHERE id_annonces = $_GET[id]");
                 $requeteSQL->execute();     
                 $annonce = $requeteSQL->fetch();
@@ -26,7 +25,7 @@ session_start();
                 $reqSQL->execute();     
                 $userinfo = $reqSQL->fetch();
                
-                //******************************************* */
+                
                 ?>   
 
                 <div class="card">
