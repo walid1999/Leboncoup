@@ -3,7 +3,7 @@
 <?php
 
 session_start();
-{
+if (isset($_POST['connexion'])){
   $username = htmlspecialchars($_POST['username']);
   $password = htmlspecialchars($_POST['password']);
   if(!empty($username) AND !empty($password)){
