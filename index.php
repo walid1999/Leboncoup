@@ -29,7 +29,7 @@ if(isset($_POST['q']) AND !empty($_POST['q'])) {
 </div>
 
 <?php
-  if (isset($_POST['search'])){
+  
     if($annonce->rowCount() > 0) { ?>
    
    <?php while($a = $annonce->fetch()) { ?>
@@ -45,7 +45,7 @@ if(isset($_POST['q']) AND !empty($_POST['q'])) {
 <?php } else { ?>
 Aucun résultat pour: <?php $q ?>...
 <?php } 
-  }
+  
 ?>
 
 
