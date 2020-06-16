@@ -27,7 +27,7 @@ if(isset($_POST['q']) AND !empty($_POST['q'])) {
   </form>
 </nav>
 </div>
-<h3 class="m-5">Annonces</h3>
+<h3 class="m-5" align="center">Annonces</h3>
 <?php
   
     if($annonce->rowCount() > 0) { ?>
