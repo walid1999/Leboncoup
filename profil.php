@@ -32,7 +32,6 @@ if(isset($_SESSION["id"])){
         <p class="profil">Prénom : <?php echo $userinfo['prenom']; ?></p>
         <p class="profil">Nom : <?php echo $userinfo['nom']; ?></p>
         <p class="profil">Mail : <?php echo $userinfo['mail']; ?></p>
-        <p  class="profil">nombre d'annonce :  </p>
 
         <form class="login" action="" method="post" name="login">
         <input type="submit" value="Editer profil " name="editer" class="box-button">

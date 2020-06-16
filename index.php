@@ -20,12 +20,14 @@ if(isset($_POST['q']) AND !empty($_POST['q'])) {
 ?>
 <div align="center">
 <h1 >Leboncoup</h1>
-
-<form method="post">
-   <input type="search" name="q" placeholder="Recherche..." />
-   <input type="submit" name="search" value="Valider" />
-</form>
+<nav class="nav justify-content-center p-5">
+  <form class="form-inline " method="post">
+    <input name="q" class="form-control mr-sm-2 text-center" type="search" placeholder="Recherche..." aria-label="Search">
+    <button name="search" class="btn btn-primary my-2 my-sm-0 " type="submit"><i class="fas fa-search"></i></button>
+  </form>
+</nav>
 </div>
+
 <?php
   if (isset($_POST['search'])){
     if($annonce->rowCount() > 0) { ?>
